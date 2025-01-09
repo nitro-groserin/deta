@@ -4,8 +4,6 @@ textarea.addEventListener('focus', () => {
   textarea.placeholder = 'コメントを追加…';
   })
 
-textarea.addEventListener('onkeyup',() => {textarea ='';})
-
 
   function hatena(event) {
     let textarea = document.getElementById('textarea');
