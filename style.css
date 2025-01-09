@@ -1,5 +1,22 @@
-.p {
-　font-size: 3px;
-　padding: 0px;
-　margin: 0px;
+.divdiv{
+  color: #f2a0a1;
 }
+
+#top{
+  display: flex;
+}
+
+.top1{
+  padding:10px 0 0 5px;
+}
+
+.tip2{
+  margin:0 0 10px 260px;
+}
+
+.textarea{
+  font-size:20px;
+  margin:0px 0 0 32px;
+}
+
+
