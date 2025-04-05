@@ -1,33 +1,37 @@
-const textarea = document.getElementById('textarea');
+const audioPaths = [
+  '/ヌケガラデイズ(なめこ).mp3', // 1曲目
+  '/ヌケガラデイズ(なめこ).mp3'  // 2曲目
+];
+let audio = new Audio(audioPaths[0]); // 最初に1曲目を読み込む
+let currentTrack = 0; // 現在再生中の曲のインデックス
+let isPlaying = false;
 
-textarea.addEventListener('focus', () => {
-  textarea.placeholder = 'コメントを追加…';
-  })
+audio.addEventListener('load', () => {
+  //audio.loop = true; // ループ再生は各曲の終了時に制御
+});
 
-
-  function hatena(event) {
-    let textarea = document.getElementById('textarea');
-    textarea.value = textarea.value.slice(0, -1) + 'おいうんちするんじゃねえクソがぁッッッ！！　あーーーーーマジで反社多すぎてダリいなぁーーーー';
+document.addEventListener('click', () => {
+  if (audio.paused || !isPlaying) {
+    if (audio.paused) {
+      audio.play();
+      isPlaying = true;
+    } else {
+      audio.pause();
+      isPlaying = false;
+    }
   }
+});
 
-  
-  
-  function copyText() {
-  let sourceText = document.getElementById('textarea').value;
-  document.getElementById('destination').value = sourceText;
-}
-
-
-
-
-
-
-
-
-
-const tip2 = document.getElementsByClassName('tip2');
-
-tip2.addEventListener('click', () => {textarea = ''; })
+audio.addEventListener('ended', () => {
+  if (isPlaying) {
+    currentTrack++; // 次の曲へ
+    if (currentTrack >= audioPaths.length) {
+      currentTrack = 0; // 最後の曲の場合は1曲目に戻る
+    }
+    audio.src = audioPaths[currentTrack]; // 次の曲を読み込む
+    audio.play(); // 次の曲を再生
+  }
+});
 
 
 
@@ -37,16 +41,23 @@ tip2.addEventListener('click', () => {textarea = ''; })
 
 
 
-textarea.addEventListener('onkeyup',() => {textarea ='';})
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("Coin");
+var span = document.getElementsByClassName("close")[0];
 
+btn.onclick = function () {
+  modal.style.display = "block";
+};
 
+span.onclick = function () {
+  modal.style.display = "none";
+};
 
-
-
-
-
-
-
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
 
 
 
