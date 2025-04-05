@@ -1,6 +1,6 @@
 const audioPaths = [
-  '/ヌケガラデイズ(なめこ).mp3', // 1曲目
-  '/ヌケガラデイズ(なめこ).mp3'  // 2曲目
+  'ヌケガラデイズ(なめこ).mp3', // 1曲目
+  'ヌケガラデイズ(なめこ).mp3'  // 2曲目
 ];
 let audio = new Audio(audioPaths[0]); // 最初に1曲目を読み込む
 let currentTrack = 0; // 現在再生中の曲のインデックス
