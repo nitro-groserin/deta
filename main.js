@@ -1,8 +1,8 @@
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("Coin");
 var span = document.getElementsByClassName("close")[0];
-var openSound = new Audio("/PC-Mouse06-1.mp3"); // モーダル開く音
-var closeSound = new Audio("/PC-Mouse06-1.mp3"); // モーダル閉じる音
+var openSound = new Audio("PC-Mouse06-1.mp3"); // モーダル開く音
+var closeSound = new Audio("PC-Mouse06-1.mp3"); // モーダル閉じる音
 
 const audioPaths = [
   'ヌケガラデイズ(なめこ).mp3', // 1曲目 (背景音楽のパス)
